@@ -33,7 +33,7 @@
             android:layout_height="wrap_content" />
 
         <include
-            layout="@layout/card_layout_two_gear"
+            layout="@layout/card_layout_four_gear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

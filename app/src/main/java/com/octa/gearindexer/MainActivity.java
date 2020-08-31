@@ -6,13 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -29,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_tg_a, tv_tg_b, tv_answer;
     String[] line;
     float iss, h, expectedAnswer;
-    Context c;
 
     //Two Gear
     ListView listViewTwoGear;
+    private ArrayAdapter<String> adapterTwoGear;
+    private ArrayList<String> arrayListTwoGear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +48,27 @@ public class MainActivity extends AppCompatActivity {
         //two gear textView
         tv_tg_a = findViewById(R.id.tv_tg_A);
         tv_tg_b = findViewById(R.id.tv_tg_B);
-
         listViewTwoGear = findViewById(R.id.listViewTwoGear);
+        arrayListTwoGear = new ArrayList<>();
+
+        adapterTwoGear = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayListTwoGear);
+        listViewTwoGear.setAdapter(adapterTwoGear);
+
 
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!(et_iss.getText().toString().isEmpty() || et_h.getText().toString().isEmpty())){
+                    clearArrayList();
                     getInputs();
                     calculateTwoGears();
                 }
             }
         });
+    }
 
-
-
+    private void clearArrayList() {
+        arrayListTwoGear.clear();
     }
 
     @SuppressLint("SetTextI18n")
@@ -97,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("MyTag EXACTOUTPUT: ", String.format("A= %s, B= %s", line[0], line[1]));
                     gearFound = TRUE;
                 } else if(diff < 0.02){
+                    String otherAnswer = String.format("%s\t%s\t%s", line[0], line[1], diff);
+                    adapterTwoGear.add(otherAnswer);
                     Log.w("MyTag APPROX ANSWER: ", String.format("difference = %f", diff));
                     gearFound = TRUE;
                 }
