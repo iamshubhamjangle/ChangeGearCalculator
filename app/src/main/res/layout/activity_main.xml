@@ -118,7 +118,10 @@
                 <ListView
                     android:id="@+id/listView"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
+                    android:dividerHeight="4px"
+                    android:nestedScrollingEnabled="true"
+                    android:divider="#A1A1A1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"

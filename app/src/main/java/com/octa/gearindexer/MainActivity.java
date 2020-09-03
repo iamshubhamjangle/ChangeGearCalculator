@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         //Main list view
         listView = findViewById(R.id.listView);
         arrayList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
+        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.my_simple_list_view , arrayList);
         listView.setAdapter(adapter);
 
         //two gear textView
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!(et_iss.getText().toString().isEmpty() || et_h.getText().toString().isEmpty())){
-                    //clearArrayList();
+                    clearArrayList();
                     getInputs();
                     calculateTwoGears();
                     calculateFourGear();
@@ -108,12 +108,13 @@ public class MainActivity extends AppCompatActivity {
                 if(Float.parseFloat(line[2]) == expectedAnswer){
                     tv_tg_a.setText(line[0]);
                     tv_tg_b.setText(line[1]);
-                    String otherAnswer = String.format("A = %s  B = %s  Error = %s", line[0], line[1], diff);
+
+                    String otherAnswer = String.format("%s  %s  --  --  %s", line[0], line[1], diff);
                     adapter.add(otherAnswer);
-                    Log.d("MyTag EXACTOUTPUT: ", String.format("A = %s  B = %s  Error = %s", line[0], line[1], diff));
+                    Log.d("MyTag EXACTOUTPUT: ", otherAnswer);
                     gearFound = TRUE;
                 } else if(diff < 0.02){
-                    String otherAnswer = String.format("A = %s  B = %s  Error = %s", line[0], line[1], diff);
+                    String otherAnswer = String.format("%s  %s  --  --  %s", line[0], line[1], diff);
                     adapter.add(otherAnswer);
                     Log.w("MyTag APPROX ANSWER: ", String.format("difference = %f", diff));
                     gearFound = TRUE;
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if(gearFound == FALSE){
-                Toast.makeText(getApplicationContext(),"No Matching 2 Gears found",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"No Matching 2 Gears found",Toast.LENGTH_SHORT).show();
                 Log.e("MyTag NOT FOUND", "Answer not found");
             }
 
@@ -152,20 +153,24 @@ public class MainActivity extends AppCompatActivity {
                     tv_fg_c.setText(line[2]);
                     tv_fg_d.setText(line[3]);
 
-                    String otherAnswer = String.format("%s  %s  %s  %s  Error = %s", line[0], line[1], line[2], line[3], diff);
+                    String otherAnswer = String.format("%s  %s  %s  %s  %s", line[0], line[1], line[2], line[3], diff);
                     adapter.add(otherAnswer);
-                    Log.d("MyTag EXACTOUTPUT: ", String.format("%s  %s  %s  %s  Error = %s", line[0], line[1], line[2], line[3], diff));
+
+                    Log.d("MyTag EXACTOUTPUT: ", otherAnswer);
                     gearFound = TRUE;
-                } else if(diff < 0.02){
-                    String otherAnswer = String.format("%s  %s  %s  %s  Error = %s", line[0], line[1], line[2], line[3], diff);
+                }
+                else if(diff < 0.02){
+                    String otherAnswer = String.format("%s  %s  %s  %s  %s", line[0], line[1], line[2], line[3], diff);
                     adapter.add(otherAnswer);
+
                     Log.w("MyTag APPROX ANSWER: ", String.format("difference = %f", diff));
                     gearFound = TRUE;
                 }
+
             }
 
             if(gearFound == FALSE){
-                Toast.makeText(getApplicationContext(),"No Matching 4 Gears found",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"No Matching 4 Gears found",Toast.LENGTH_SHORT).show();
                 Log.e("MyTag NOT FOUND", "Answer not found");
             }
 
