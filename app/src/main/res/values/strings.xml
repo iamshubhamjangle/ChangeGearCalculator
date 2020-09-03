@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Gear Indexer</string>
+    <string name="input1">Enter is x S</string>
+    <string name="input2">Enter pitch of spiral w/p</string>
 </resources>

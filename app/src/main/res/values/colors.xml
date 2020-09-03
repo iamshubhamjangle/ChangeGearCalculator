@@ -11,7 +11,7 @@
     <color name="lineColor">#4dabf5</color>
     <color name="mainLayoutbackground">#DCDCDC</color>
     <color name="headBarColor">#DDD</color>
-    <color name="textColumnBackground">#2E3239</color>
+    <color name="textColumnBackground">#AAAAAA</color>
 </resources>
 
 <!--<resources>-->

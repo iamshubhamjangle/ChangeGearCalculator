@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Calculate"/>
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Calculate"
+            android:textColor="@color/cardBackground"/>
 
         <include
             layout="@layout/card_layout_two_gear"
@@ -49,11 +50,11 @@
                     android:id="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:background="@color/labelbackground"
                     android:gravity="center"
+                    android:padding="@dimen/cardPadding"
                     android:text="Approximate Matches"
                     android:textColor="@color/headBarColor"
-                    android:background="@color/labelbackground"
-                    android:padding="@dimen/cardPadding"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -63,8 +64,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="A"
                     android:padding="@dimen/cardPadding"
+                    android:text="A"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_B"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,8 +76,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="B"
                     android:padding="@dimen/cardPadding"
+                    android:text="B"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_C"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_A"
@@ -87,8 +88,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="C"
                     android:padding="@dimen/cardPadding"
+                    android:text="C"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_D"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_B"
@@ -99,8 +100,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="D"
                     android:padding="@dimen/cardPadding"
+                    android:text="D"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_error"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_C"
@@ -122,9 +123,9 @@
                     android:id="@+id/listView"
                     android:layout_width="0dp"
                     android:layout_height="300dp"
+                    android:divider="#A1A1A1"
                     android:dividerHeight="4px"
                     android:nestedScrollingEnabled="true"
-                    android:divider="#A1A1A1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
