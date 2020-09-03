@@ -19,7 +19,7 @@
             android:gravity="center"
             android:padding="@dimen/cardPadding"
             android:text="Input"
-            android:textColor="@color/textColor"
+            android:textColor="@color/headBarColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

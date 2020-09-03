@@ -14,11 +14,11 @@
             android:id="@+id/textViewTwoGearHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:background="@color/labelbackground"
             android:gravity="center"
             android:padding="@dimen/cardPadding"
             android:text="Two Gear"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/headBarColor" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

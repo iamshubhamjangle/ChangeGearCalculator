@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/mainLayoutbackground"
         android:orientation="vertical"
         android:padding="3dp"
         tools:context=".MainActivity">
@@ -24,9 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorAccent"
-            android:text="Calculate"
-            android:textColor="@color/textColor" />
+            android:text="Calculate"/>
 
         <include
             layout="@layout/card_layout_two_gear"
@@ -51,13 +49,14 @@
                     android:id="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:text="Approximate Matches"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/headBarColor"
+                    android:background="@color/labelbackground"
+                    android:padding="@dimen/cardPadding"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_fg_A" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_two_gear_list_A"
@@ -65,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="A"
+                    android:padding="@dimen/cardPadding"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_B"
                     app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="B"
+                    android:padding="@dimen/cardPadding"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_C"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_A"
@@ -87,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="C"
+                    android:padding="@dimen/cardPadding"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_D"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_B"
@@ -98,6 +100,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="D"
+                    android:padding="@dimen/cardPadding"
                     android:textColor="@color/textHeadingColor"
                     app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_error"
                     app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_C"
