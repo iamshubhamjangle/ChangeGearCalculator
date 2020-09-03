@@ -13,7 +13,7 @@ Currently the app calculates ratio from the user input and compares it with the 
 
 Want to help to improve app? Read the improvement required section below.
 
-## Improvement required
+### Improvement required
 1) Existing ListView is basic list view, we need it to be updated to Custom list view. A row_item.xml file already exits in layout directory. We just need to add a custom adapter to update the current listView to CustomListView.
 
 2) Hide the keyboard when user presses calculate button.
@@ -23,5 +23,8 @@ Want to help to improve app? Read the improvement required section below.
 4) Code repeatation occurs in calculateTwoGear() and calculateFourGear(). Can we improve it?
 
 
-### Note:
+##### Note:
 While creating pull request describe what changes has been made. Happy Coding!
+
+##### Screenshot:
+![Screenshot_20200903-224405](https://user-images.githubusercontent.com/65165548/92150141-9b597100-ee3c-11ea-841a-76c32c00f6e4.png)
