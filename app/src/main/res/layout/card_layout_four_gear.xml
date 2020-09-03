@@ -2,15 +2,14 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/myCardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewFourGearHeading"
@@ -24,7 +23,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="@dimen/cardPadding">
 
             <TextView
@@ -118,84 +117,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_fg_C"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="Approximate Matches"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_fg_A" />
-
-            <TextView
-                android:id="@+id/tv_two_gear_list_A"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="A"
-                android:textColor="@color/textHeadingColor"
-                app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_B"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
-                android:id="@+id/tv_two_gear_list_B"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="B"
-                android:textColor="@color/textHeadingColor"
-                app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_C"
-                app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_A"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
-                android:id="@+id/tv_two_gear_list_C"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="C"
-                android:textColor="@color/textHeadingColor"
-                app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_D"
-                app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_B"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
-                android:id="@+id/tv_two_gear_list_D"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="D"
-                android:textColor="@color/textHeadingColor"
-                app:layout_constraintEnd_toStartOf="@+id/tv_two_gear_list_error"
-                app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_C"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <TextView
-                android:id="@+id/tv_two_gear_list_error"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Error"
-                android:textColor="@color/textHeadingColor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.989"
-                app:layout_constraintStart_toEndOf="@+id/tv_two_gear_list_B"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-            <ListView
-                android:id="@+id/listViewFourGear"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_two_gear_list_A" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
