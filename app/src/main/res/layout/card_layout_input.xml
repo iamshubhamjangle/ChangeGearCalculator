@@ -36,7 +36,7 @@
                 android:autofillHints="Enter is x S"
                 android:ems="10"
                 android:hint="@string/input1"
-                android:inputType="numberDecimal"
+                android:inputType="number|numberDecimal"
                 android:textColor="@color/textColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,14 +47,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/input2"
-                android:inputType="numberDecimal"
+                android:inputType="number|numberDecimal"
                 android:textColor="@color/textColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_iss"
-                android:autofillHints="" />
+                app:layout_constraintTop_toBottomOf="@+id/et_iss" />
 
             <TextView
                 android:id="@+id/textViewAnswer"

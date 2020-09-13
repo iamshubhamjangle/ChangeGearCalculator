@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -21,13 +22,25 @@
         <Button
             android:id="@+id/buttonCalculate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/cardPadding"
+            android:layout_marginRight="@dimen/cardPadding"
+            android:backgroundTint="@color/success"
             android:text="Calculate"
+            android:textColor="@color/cardBackground" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/cardPadding"
+            android:layout_marginRight="@dimen/cardPadding"
+            android:backgroundTint="@color/darkBlue"
+            android:text="Clear"
             android:textColor="@color/cardBackground"/>
 
         <include
+            android:id="@+id/cardLayout1"
             layout="@layout/card_layout_two_gear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

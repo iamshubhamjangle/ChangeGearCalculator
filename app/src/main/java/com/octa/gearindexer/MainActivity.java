@@ -1,6 +1,8 @@
 package com.octa.gearindexer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
+
 import com.opencsv.CSVReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +13,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,11 +26,12 @@ import static java.lang.Boolean.TRUE;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonCalculate;
+    Button buttonCalculate, buttonClear;
     EditText et_iss, et_h;
     TextView tv_tg_a, tv_tg_b, tv_answer, tv_fg_a, tv_fg_b, tv_fg_c, tv_fg_d;
     String[] line;
     float iss, h, expectedAnswer;
+    NestedScrollView nsv;
 
     ListView listView;
     private ArrayAdapter<String> adapter;
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Input layout
         buttonCalculate = findViewById(R.id.buttonCalculate);
+        buttonClear = findViewById(R.id.buttonClear);
         et_iss = findViewById(R.id.et_iss);
         et_h = findViewById(R.id.et_h);
         tv_answer = findViewById(R.id.textViewAnswer);
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         tv_fg_c = findViewById(R.id.tv_fg_C);
         tv_fg_d = findViewById(R.id.tv_fg_D);
 
+        nsv = findViewById(R.id.nestedScrollView);
+
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,9 +75,28 @@ public class MainActivity extends AppCompatActivity {
                     getInputs();
                     calculateTwoGears();
                     calculateFourGear();
+                    postProcess();
                 }
             }
         });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {@Override
+            public void onClick(View view) {
+                et_iss.setText("");
+                et_h.setText("");
+                tv_answer.setText("Answer");
+                tv_tg_a.setText("0");
+                tv_tg_b.setText("0");
+
+                tv_fg_a.setText("0");
+                tv_fg_b.setText("0");
+                tv_fg_c.setText("0");
+                tv_fg_d.setText("0");
+
+                clearArrayList();
+            }
+        });
+
     }
 
     private void clearArrayList() {
@@ -178,5 +204,23 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             Log.e("MyTag", "Error" + e);
         }
+    }
+
+    private void postProcess() {
+        //hide keyboard
+        try {
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //Change the target view to answer
+        nsv.post(new Runnable() {
+            @Override
+            public void run() {
+                nsv.smoothScrollTo(0, buttonClear.getBottom());
+            }
+        });
     }
 }

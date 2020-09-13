@@ -12,6 +12,8 @@
     <color name="mainLayoutbackground">#DCDCDC</color>
     <color name="headBarColor">#DDD</color>
     <color name="textColumnBackground">#AAAAAA</color>
+    <color name="success">#278853</color>
+    <color name="darkBlue">#00203F</color>
 </resources>
 
 <!--<resources>-->
