@@ -28,3 +28,5 @@ While creating pull request describe what changes has been made. Happy Coding!
 
 ##### Screenshot:
 ![Screenshot_20200903-224405](https://user-images.githubusercontent.com/65165548/92150141-9b597100-ee3c-11ea-841a-76c32c00f6e4.png)
+
+<img src="https://user-images.githubusercontent.com/65165548/92150141-9b597100-ee3c-11ea-841a-76c32c00f6e4.png" height="100">
